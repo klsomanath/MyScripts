@@ -1,4 +1,4 @@
-TargetBranchCommit=134591fbbcbb0f25694964e6c3e85f42d797363f
+TargetBranchCommit=<Paste the Target Branch HEAD Commit Here>
 
 SourceBranchCommit=$(git log | grep commit | head -1 | awk '{print $2}')
 
@@ -13,7 +13,7 @@ if [ ! -d 'PRFiles' ];
 then
     mkdir PRFiles
 fi
-Destination=C:/Users/lsomanath/Documents/Project/CDW/SITBackMergeCPQQA-0704/CDW-Salesforce-Main/PRFiles
+Destination=<Paste the Destination path Here>PRFiles
 IFS=''
 while read -r line; do
     cp --parents $line $Destination
