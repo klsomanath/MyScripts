@@ -1,6 +1,15 @@
+
+# This is for the Pull Request which is open
+
 TargetBranchCommit=<Paste the Target Branch HEAD Commit Here>
 
 SourceBranchCommit=$(git log | grep commit | head -1 | awk '{print $2}')
+
+# For the Pull request that is closed please take the Merge Commit ID
+
+# Source Commit ID is <mergeCommitID>
+
+# target Commit ID is <mergeCommitID>^
 
 echo $(git diff $TargetBranchCommit $SourceBranchCommit --name-only > PRfiles.txt)
 
