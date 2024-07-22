@@ -1,6 +1,6 @@
 head_branch="<Branch Name>"
 
-workflow_id="<YML File Name"
+workflow_id="<YML File Name>"
 
 token="<GitHub Token>"
 
