@@ -15,6 +15,10 @@ sf org login sfdx-url --sfdx-url-file auth.txt -a $alias
 # Run the below Command to get token in a file
 # sf org display --target-org $alias --verbose | grep "Access Token" | awk '{print $3}' > token.txt
 
+
+## Please don't commit the file with github token hardcoded. Else the token will be revoked by github as it is not best practice
+
+## If referring in an YML file use SECRETS for defining the token
 token="<Paste your SF Org Token>"
 
 ObjectAPIName="<Object API Name>"
