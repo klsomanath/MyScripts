@@ -2,6 +2,10 @@ head_branch="<Branch Name>"
 
 workflow_id="<YML File Name>"
 
+
+## Please don't commit the file with github token hardcoded. Else the token will be revoked by github as it is not best practice
+
+## If referring in an YML file use SECRETS for defining the token
 token="<GitHub Token>"
 
 owner="<User Name>"
