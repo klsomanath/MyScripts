@@ -1,12 +1,15 @@
-## Get the Work-flow file for which you want to get the statuses
-workflow_file="example.yml"
+head_branch="<Branch Name>"
 
-token="<Paste your GitHub Org Token>"
+workflow_id="<YML File Name>"
 
-owner="<Paste your github username>"
+token="<GitHub Token>"
 
-repo="<Paste your GitHub repository name>"
+owner="<User Name>"
 
-last_successful_commit=$((curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $token " -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/$owner/$repo/actions/workflows/$workflow_file/runs) | jq -r '.workflow_runs[] | select(.status == "completed" ) | select(.conclusion == "success") | .head_sha' | head -1 )
+repo="<Repository Name>"
+
+api_command="curl -L -H \"Accept: application/vnd.github+json\" -H \"Authorization: Bearer $token \" -H \"X-GitHub-Api-Version: 2022-11-28\" https://api.github.com/repos/$owner/$repo/actions/workflows/$workflow_id/runs | jq -r '.workflow_runs[] | select(.head_branch == \"$head_branch\") | select(.status == \"completed\") | select(.conclusion == \"success\") | .head_sha' | head -1"
+
+last_successful_commit=$(eval $api_command)
 
 echo $last_successful_commit
