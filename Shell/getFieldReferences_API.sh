@@ -19,6 +19,9 @@ sf org login sfdx-url --sfdx-url-file auth.txt -a $alias
 ## Please don't commit the file with github token hardcoded. Else the token will be revoked by github as it is not best practice
 
 ## If referring in an YML file use SECRETS for defining the token
+
+## Token can generated in settings of the github repository make sure you are giving access to repo scope for the API Call to function correctly
+
 token="<Paste your SF Org Token>"
 
 ObjectAPIName="<Object API Name>"
