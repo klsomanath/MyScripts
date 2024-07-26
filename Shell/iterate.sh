@@ -21,5 +21,4 @@ iterate () {
 }
 
 iterate "$directory"
-pwd
 cat listoffiles.txt
