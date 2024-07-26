@@ -8,7 +8,7 @@ workflow_id="<YML File Name>"
 ## If referring in an YML file use SECRETS for defining the token
 token="<GitHub Token>"
 
-owner="<User Name>"
+owner="<User Name>" #If it is organisation it will be org/repos/reponame
 
 repo="<Repository Name>"
 
