@@ -20,9 +20,9 @@ runSfAnalyser () {
     sf scanner run -t force-app/main/default/lwc --outfile $HOME/Documents/Project/CDW/CodeAnalyser/$currentDate/$folderName/$time2-LWCResults.csv
     echo "The Outputs will be in folder- "$HOME/Documents/Project/CDW/CodeAnalyser/$currentDate/$folderName/
 }
-path="Documents/Project/CDW/SITReleasePI13Sprint2/CDW-Salesforce-Main" #Change the Path before you run the file
+path="sf project path after username" #Change the Path before you run the file
 cd $HOME/$path
-git checkout SIT
+git checkout branch1
 runSfAnalyser
-git checkout CPQ/develop
+git checkout branch2
 runSfAnalyser
