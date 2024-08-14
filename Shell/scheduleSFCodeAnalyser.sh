@@ -1,7 +1,7 @@
 #!/bin/sh
 runSfAnalyser () {
     ActualBranch=$(git branch | grep "*" | cut -d " " -f 2)
-    git pull origin $ActualBranch
+    git pull origin $ActualBranch --quiet
     Branch=$(git branch | grep "*" | cut -d " " -f 2 | cut -d '\' -f2)
     IFS='/'
     read -ra newarr <<< "$Branch"
@@ -20,9 +20,9 @@ runSfAnalyser () {
     sf scanner run -t force-app/main/default/lwc --outfile $HOME/Documents/Project/CDW/CodeAnalyser/$currentDate/$folderName/$time2-LWCResults.csv
     echo "The Outputs will be in folder- "$HOME/Documents/Project/CDW/CodeAnalyser/$currentDate/$folderName/
 }
-path="sf project path after username" #Change the Path before you run the file
+path="Documents/Project/CDW/SITReleasePI13-Sprint3/CDW-Salesforce-Main" #Change the Path before you run the file
 cd $HOME/$path
-git checkout branch1
+git checkout SIT
 runSfAnalyser
-git checkout branch2
+git checkout CPQ/develop
 runSfAnalyser
